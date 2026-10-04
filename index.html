@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ZONIX — Gaming Store</title>
+<meta name="description" content="Consoles, games, PC gear and accessories. Genuine products, fast delivery."><meta name="theme-color" content="#0b0b0f">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Chakra+Petch:wght@500;600;700&family=Cairo:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head><body>
+<div class="ann"><div class="mq"><span>⚡ FREE DELIVERY OVER 300 TND ★ CODE GAME10 = 10% OFF ★ NEW DROPS EVERY WEEK ★ 12 MONTH WARRANTY ★ </span><span>⚡ FREE DELIVERY OVER 300 TND ★ CODE GAME10 = 10% OFF ★ NEW DROPS EVERY WEEK ★ 12 MONTH WARRANTY ★ </span><span>⚡ FREE DELIVERY OVER 300 TND ★ CODE GAME10 = 10% OFF ★ NEW DROPS EVERY WEEK ★ 12 MONTH WARRANTY ★ </span><span>⚡ FREE DELIVERY OVER 300 TND ★ CODE GAME10 = 10% OFF ★ NEW DROPS EVERY WEEK ★ 12 MONTH WARRANTY ★ </span></div></div>
+<nav><a href="#top" class="logo" id="bn"></a><div class="lk"><a href="#shop">Shop</a><a href="#deals">Deals</a><a href="#rewards">Rewards</a><a href="#contact">Contact</a></div><input id="q" placeholder="🔍  Search games, consoles, controllers, PC gear..." oninput="S.q=this.value;draw()">
+<select class="lgs" onchange="setL(this.value)"><option value="en">EN</option><option value="fr">FR</option><option value="ar">عربي</option></select><button class="ib" id="lvb" onclick="location.hash='#rewards'"></button><button class="ib" onclick="S.w=!S.w;go();draw()">♥ <span id="wc">0</span></button><button class="ib" onclick="openC()">🛒 <span id="cc">0</span></button></nav>
+
+<section class="hero" id="top"><span class="stk" style="right:8%;top:12%">🕹️</span><span class="stk" style="right:22%;top:55%;animation-delay:-1s">👾</span><span class="stk" style="right:6%;bottom:12%;animation-delay:-2s">🎮</span>
+<span class="blink">▶ PRESS START</span><h1>GAME<br><span>ON.</span></h1>
+<p>Consoles, games, PC gear and accessories. 100% genuine, delivered fast. Your next level starts here.</p>
+<div style="margin-top:22px;display:flex;gap:14px;flex-wrap:wrap"><a href="#shop" class="btn">Insert coin</a><a href="#deals" class="btn o">Hot deals</a></div>
+</section>
+
+<section><h2><i>LVL 01</i>Pick your class</h2><div class="cats" id="cats"></div></section>
+
+<section id="deals"><div class="deal"><div><h2 style="margin:0 0 6px;font-size:28px">⚡ FLASH DEALS</h2><span style="color:var(--mu)">Limited stock. Boss fight ends tonight!</span></div>
+<div class="cd"><div><span id="h">00</span><small>HRS</small></div><div><span id="m">00</span><small>MIN</small></div><div><span id="s">00</span><small>SEC</small></div></div></div></section>
+
+<section id="shop"><h2><i>LVL 02</i>The loot</h2>
+<div class="bar" id="catb"></div>
+<div class="bar"><span id="rc" style="color:var(--mu)"></span><span style="flex:1"></span><select id="pls" onchange="S.p=this.value;draw()"></select>
+<select onchange="S.o=this.value;draw()"><option value="">Sort: Featured</option><option value="pa">Price: low to high</option><option value="pd">Price: high to low</option><option value="r">Top rated</option></select></div>
+<div class="grid" id="grid"></div></section>
+
+<section id="rewards"><h2><i>XP</i>Rewards club</h2><div id="rw"></div></section>
+<section id="about"><h2><i>ABOUT</i>About ZONIX</h2><p style="max-width:640px;color:var(--mu);font-size:18px">ZONIX is a gaming store built by gamers, for gamers. We sell genuine consoles, games and gear, deliver across Tunisia and help you pick the right setup. Questions? We are one WhatsApp message away.</p></section>
+<section id="reviews"><h2><i>★★★★★</i>Player reviews</h2><div class="cols" id="rv"></div></section>
+<section id="services"><h2><i>BONUS</i>Services</h2><div class="cols">
+<div class="box"><h3>📦 Pre-orders</h3><p>Reserve upcoming releases with a small deposit.</p></div>
+<div class="box"><h3>🔁 Trade-in</h3><p>Trade your old console or games for store credit.</p></div>
+<div class="box"><h3>🛠️ Repairs</h3><p>Controller drift, console cleaning and more.</p></div>
+<div class="box"><h3>🎁 Gift cards</h3><p>Digital codes delivered by email, instantly.</p></div></div>
+<div style="margin-top:20px"><a href="#contact" class="btn">Ask us</a></div></section>
+
+
+<section id="faq"><h2><i>LVL 04</i>FAQ</h2><div style="max-width:700px">
+<details><summary>Are the products original?</summary><p>Yes, all products are genuine with warranty. Edit this text to match your policy.</p></details>
+<details><summary>How long is delivery?</summary><p>2–5 days after dispatch.</p></details>
+<details><summary>Can I return a product?</summary><p>Within 14 days if unopened. Defective items are replaced under warranty.</p></details>
+<details><summary>Do you offer pre-orders?</summary><p>Yes, contact us for upcoming releases.</p></details>
+<details><summary>Which payment methods do you accept?</summary><p>Cash on delivery, and card payment when available.</p></details>
+<details><summary>Can I pick up my order in store?</summary><p>Yes, choose Store pickup at checkout. It is free and we tell you when it is ready.</p></details>
+<details><summary>How does the Rewards club work?</summary><p>You earn points on every order. New levels unlock discounts, free delivery and VIP prices.</p></details></div></section>
+
+<section id="contact"><h2><i>LVL 05</i>Contact</h2>
+<form class="in" onsubmit="sendMsg(event)"><input placeholder="Name" required><input type="email" placeholder="Email" required><textarea rows="4" placeholder="Message" required></textarea><button class="btn">Send</button></form>
+<p style="margin:30px 0 8px;color:var(--mu)">Get notified about new drops</p><form class="nl" onsubmit="sub(event)"><input type="email" placeholder="Email" required><button class="btn">Join</button></form></section>
+<footer class="ft"><div><div class="logo" id="bf2"></div><p style="color:var(--mu)">Your local gaming headquarters.</p></div>
+<div><b>Shop</b><a href="#shop">All products</a><a href="#deals">Deals</a><a href="#services">Services</a></div>
+<div><b>Help</b><a onclick="pol('shipping')">Shipping</a><a onclick="pol('returns')">Returns &amp; warranty</a><a onclick="pol('terms')">Terms</a><a onclick="pol('privacy')">Privacy</a><a onclick="track()">Track my order</a></div>
+<div><b>Contact</b><span id="ci"></span></div></footer><div class="cpy" id="bf"></div>
+
+<button class="btn fab" onclick="openC()">🛒 <span id="fc">0</span> · <span id="ft"></span></button>
+<div class="ov" id="ov" onclick="closeAll()"></div>
+<aside class="dr" id="dr"><div class="row"><h2 style="margin:0">🎒 Inventory</h2><button class="ib" onclick="closeAll()">✕</button></div>
+<div style="margin-top:12px;font-size:14px;color:var(--mu)" id="ship"></div><div class="prog"><div id="pg"></div></div>
+<div id="its" style="flex:1"></div>
+<div class="row" style="margin:10px 0"><input id="cp" placeholder="Enter cheat code"><button class="ib" onclick="coupon()">Unlock</button></div>
+<div class="row"><span>Subtotal</span><span id="st"></span></div><div class="row" id="dsr" style="color:var(--g)"></div><div class="row" id="lvr" style="color:var(--g)"></div><div class="row" id="shr"></div>
+<div class="row" style="font:700 18px Orbitron;margin:8px 0"><span>Total</span><span id="tt"></span></div>
+<div class="note" id="ern" style="margin-bottom:8px;color:var(--y)"></div><button class="btn" onclick="openCo()">Checkout</button></aside>
+
+<div class="md" id="qv"></div><div class="toast" id="tst"></div>
+<div class="md" id="co"><h2 style="margin-top:0">Checkout</h2><div id="sm" class="box" style="margin-bottom:12px;padding:12px;display:grid;gap:4px"></div>
+<form id="cf" onsubmit="pay(event)"><input id="fn" placeholder="Full name" required><input id="fe" type="email" placeholder="Email"><input id="fp" type="tel" placeholder="Phone" required>
+<select id="dm" onchange="setDM(this.value)"><option value="std">Standard delivery (address)</option><option value="loc">Local delivery (share your location)</option><option value="pick">Store pickup (free)</option></select>
+<select id="ts"><option>Preferred time: any time</option><option>Morning (9-12)</option><option>Afternoon (12-17)</option><option>Evening (17-20)</option></select>
+<div id="std" style="display:grid;gap:10px"><input id="fa" placeholder="Address, city, postal code" required><select id="gv" required><option value="">Governorate</option></select></div>
+<div id="loc" style="display:none;gap:10px"><button type="button" class="ib" id="gps" onclick="getLoc()">📍 Share my location</button><input id="fl" placeholder="Location link or landmark (e.g. near the pharmacy)"><input id="fw" type="tel" placeholder="Second phone / WhatsApp (optional)"></div>
+<select id="pm" onchange="cardf.style.display=this.value=='card'?'grid':'none'"><option value="Cash on delivery">Cash on delivery</option><option value="card">Pay by card</option></select>
+<div id="cardf" style="display:none;gap:10px"><input placeholder="Card number" inputmode="numeric"><input placeholder="MM/YY"></div>
+<button class="btn" id="pb">Place order</button><p class="note">We will call you to confirm your order and delivery time.</p></form>
+<div id="dn" style="display:none"><h3 style="color:var(--g)">GG! Order confirmed ✓</h3><p>Thanks! We'll contact you to confirm delivery.</p><button class="btn" onclick="closeAll()">Continue shopping</button></div></div>
+
+<script>
+/* ===== CONFIG ===== */
+const CONFIG={brand:"ZONIX",currency:"TND",whatsapp:"" /* e.g. 21620123456 */,email:"",phone:"",address:"Tunis, Tunisia",hours:"Mon-Sat 10:00-19:00",instagram:"",tiktok:"",facebook:"",discord:"",paymentLink:"",freeShip:300,shipFee:8,gaId:"",localFee:5,ptsPerTnd:1,coupons:{GAME10:10,WELCOME5:5}};
+/* ===== PRODUCTS: edit/add/remove. plat: PlayStation|Xbox|Nintendo|PC|Any. Add image:"..." for real photos ===== */
+const PRODUCTS=[
+{id:1,vip:{lvl:1,price:1849},stock:3,name:"Next-Gen Console 1TB",cat:"Consoles",plat:"PlayStation",price:1899,old:2099,rating:4.9,badge:"HOT",icon:"🎮",c1:"#1e3a8a",c2:"#0b1230",desc:"Ultra-fast SSD, 4K gaming, ray tracing. Includes 1 controller."},
+{id:2,name:"Series Console 512GB",cat:"Consoles",plat:"Xbox",price:1599,rating:4.7,icon:"🎮",c1:"#14532d",c2:"#08170f",desc:"Powerful next-gen performance with quick resume."},
+{id:3,stock:5,name:"Hybrid Handheld Console",cat:"Consoles",plat:"Nintendo",price:1199,old:1299,rating:4.8,badge:"SALE",icon:"🕹️",c1:"#7f1d1d",c2:"#1a0707",desc:"Play at home or on the go. OLED screen."},
+{id:4,name:"Open World Adventure",cat:"Games",plat:"PlayStation",price:219,rating:4.8,badge:"NEW",icon:"💿",c1:"#581c87",c2:"#14072a",desc:"Massive open-world action adventure."},
+{id:5,name:"Racing Legends 2026",cat:"Games",plat:"Xbox",price:199,old:249,rating:4.5,badge:"SALE",icon:"🏎️",c1:"#7c2d12",c2:"#1c0a04",desc:"Realistic racing with 500+ cars."},
+{id:6,name:"Football Pro 2026",cat:"Games",plat:"Any",price:189,rating:4.6,icon:"⚽",c1:"#065f46",c2:"#03180f",desc:"The latest season with all leagues. Multi-platform."},
+{id:7,vip:{lvl:1,price:199},name:"Pro Wireless Controller",cat:"Accessories",plat:"PlayStation",price:219,rating:4.7,icon:"🎮",c1:"#312e81",c2:"#0c0b25",desc:"Adaptive triggers, haptic feedback, 12h battery."},
+{id:8,stock:0,name:"Elite Pad Black",cat:"Accessories",plat:"Xbox",price:259,old:299,rating:4.6,badge:"SALE",icon:"🎮",c1:"#1f2937",c2:"#070a0f",desc:"Custom buttons and adjustable tension."},
+{id:9,vip:{lvl:1,price:149},name:"7.1 Surround Headset",cat:"Accessories",plat:"Any",price:169,rating:4.4,icon:"🎧",c1:"#831843",c2:"#1f0612",desc:"Noise-cancelling mic, RGB, memory-foam cushions."},
+{id:10,vip:{lvl:2,price:4399},stock:2,name:"RTX Gaming PC",cat:"PC Gaming",plat:"PC",price:4499,old:4899,rating:4.9,badge:"HOT",icon:"🖥️",c1:"#4c1d95",c2:"#0f0620",desc:"High-end GPU, 32GB RAM, 1TB NVMe. Ready for 1440p."},
+{id:11,name:"Mechanical RGB Keyboard",cat:"PC Gaming",plat:"PC",price:179,rating:4.6,icon:"⌨️",c1:"#0e7490",c2:"#04161c",desc:"Hot-swappable switches, per-key RGB."},
+{id:12,stock:4,name:"Ultra Light Gaming Mouse",cat:"PC Gaming",plat:"PC",price:129,old:159,rating:4.7,badge:"SALE",icon:"🖱️",c1:"#9f1239",c2:"#1f0509",desc:"58g, 26K DPI sensor, wireless."},
+{id:13,vip:{lvl:2,price:649},name:"27'' 165Hz Monitor",cat:"PC Gaming",plat:"PC",price:699,rating:4.5,icon:"🖥️",c1:"#1e40af",c2:"#080f26",desc:"QHD, 1ms response, adaptive sync."},
+{id:14,name:"Gaming Chair Pro",cat:"Accessories",plat:"Any",price:549,rating:4.3,icon:"💺",c1:"#7f1d1d",c2:"#180606",desc:"Ergonomic, lumbar support, 4D armrests."},
+{id:15,name:"Gift Card 50 TND",cat:"Gift Cards",plat:"Any",price:50,rating:5,icon:"🎁",c1:"#6d28d9",c2:"#150a2e",desc:"Digital code sent by email. Perfect gift."},
+{id:16,name:"Gift Card 100 TND",cat:"Gift Cards",plat:"Any",price:100,rating:5,icon:"🎁",c1:"#0891b2",c2:"#041a21",desc:"Digital code sent by email. Perfect gift."},
+{id:17,name:"Starter Pack: Console + 2 Games + Extra Pad",cat:"Bundles",plat:"PlayStation",price:2399,old:2526,rating:4.9,badge:"BUNDLE",icon:"📦",c1:"#1e3a8a",c2:"#0b1230",desc:"Includes: Next-Gen Console 1TB + 2 games + Pro Wireless Controller. Save 127 TND vs buying separately."},
+{id:18,name:"Streamer Setup: Headset + Mouse + Keyboard",cat:"Bundles",plat:"PC",price:429,old:477,rating:4.7,badge:"BUNDLE",icon:"📦",c1:"#0e7490",c2:"#04161c",desc:"Includes: 7.1 Surround Headset + Ultra Light Mouse + Mechanical RGB Keyboard. Save 48 TND."},
+{id:19,name:"PC Battle Station: PC + Monitor + Keyboard + Mouse",cat:"Bundles",plat:"PC",price:5299,old:5506,rating:4.9,badge:"BUNDLE",icon:"📦",c1:"#4c1d95",c2:"#0f0620",desc:"Includes: RTX Gaming PC + 27'' 165Hz Monitor + Keyboard + Mouse. Save 207 TND."}];
+const ICONS={Bundles:"📦",Consoles:"🎮",Games:"💿","PC Gaming":"🖥️",Accessories:"🎧","Gift Cards":"🎁"};
+const LEVELS=[{n:"Rookie",xp:0,off:0,ship:false,icon:"🌱"},{n:"Player",xp:300,off:3,ship:false,icon:"🎮"},{n:"Elite",xp:1000,off:5,ship:true,icon:"⚔️"},{n:"Legend",xp:2500,off:8,ship:true,icon:"👑"}];
+let DM="std",LOC="",XP=0;try{XP=+localStorage.getItem("gxp")||0}catch(e){}
+function lv(){let i=0;LEVELS.forEach((l,k)=>{if(XP>=l.xp)i=k});return i}
+function pr(p){return p.vip&&lv()>=p.vip.lvl?p.vip.price:p.price}
+function vipLine(p){if(!p.vip)return"";const L=LEVELS[p.vip.lvl];return lv()>=p.vip.lvl?'<br><small style="color:var(--g)">✓ VIP price unlocked</small>':`<br><small style="color:var(--y)">🔒 ${L.icon} ${L.n} price: ${fmt(p.vip.price)}</small>`}
+function sv(){try{localStorage.setItem("gxp",XP)}catch(e){}drawR();draw();drawC()}
+function drawR(){const i=lv(),L=LEVELS[i],N=LEVELS[i+1],pc=N?(XP-L.xp)/(N.xp-L.xp)*100:100;
+$("lvb").textContent=`${L.icon} LVL ${i+1}`;
+$("rw").innerHTML=`<div class="box" style="margin-bottom:16px"><div class="row"><b style="font:400 22px Bungee">${L.icon} ${L.n}</b><span>${XP} pts</span></div><div class="prog"><div style="width:${pc}%"></div></div><p>${N?`${N.xp-XP} more points to reach ${N.n} ${N.icon}`:"MAX LEVEL! You are a legend 👑"}</p></div><details><summary>See all levels and perks</summary><div class="cols" style="margin-top:14px">`+LEVELS.map((l,k)=>`<div class="box" style="${k<=i?"border-color:var(--g)":"opacity:.7"}"><h3>${l.icon} ${l.n} ${k<=i?"✓":"🔒"}</h3><p>${l.xp} pts${l.off?` · ${l.off}% off everything`:""}${l.ship?" · free delivery":""}${k?` · VIP prices ${k>=2?"(all)":"(some)"}`:" · code WELCOME5"}</p></div>`).join("")+`</div></details><p class="note" style="margin-top:12px">Earn ${CONFIG.ptsPerTnd} point per 1 ${CONFIG.currency} spent. Level perks apply automatically in your cart. Progress is saved on this device.</p>`}
+let S={q:"",o:"",p:"All",c:"All",w:false},cart=[],wish=[],disc=0;
+try{cart=JSON.parse(localStorage.getItem("gc")||"[]");wish=JSON.parse(localStorage.getItem("gw")||"[]")}catch(e){}
+const $=i=>document.getElementById(i),fmt=n=>n.toFixed(2)+" "+CONFIG.currency,P=id=>PRODUCTS.find(p=>p.id==id);
+document.title=CONFIG.brand+" — Gaming Store";$("bn").textContent=CONFIG.brand;$("bf").textContent="© 2026 "+CONFIG.brand;
+function go(){location.hash="#shop"}
+function draw(){
+ $("cats").innerHTML=Object.keys(ICONS).map(c=>`<div class="cat" onclick="S.c='${c}';S.w=false;go();draw()"><i>${ICONS[c]}</i>${c}</div>`).join("");
+ const pl=["All","PlayStation","Xbox","Nintendo","PC"],ct=["All",...Object.keys(ICONS)];
+ $("pls").innerHTML=pl.map(x=>`<option value="${x}" ${S.p==x?"selected":""}>${x=="All"?"All platforms":x}</option>`).join("");
+ $("catb").innerHTML=ct.map(x=>`<button class="chip ${S.c==x?'on':''}" onclick="S.c='${x}';draw()">${x}</button>`).join("")+(S.w?'<button class="chip on" onclick="S.w=false;draw()">♥ Wishlist ✕</button>':"");
+ let l=PRODUCTS.filter(p=>(S.p=="All"||p.plat==S.p||p.plat=="Any")&&(S.c=="All"||p.cat==S.c)&&(!S.w||wish.includes(p.id))&&(p.name+p.cat+p.plat).toLowerCase().includes(S.q.toLowerCase()));
+ if(S.o=="pa")l.sort((a,b)=>pr(a)-pr(b));if(S.o=="pd")l.sort((a,b)=>pr(b)-pr(a));if(S.o=="r")l.sort((a,b)=>b.rating-a.rating);
+ $("rc").textContent=l.length+" products";
+ $("grid").innerHTML=l.map(p=>`<div class="card">${p.badge?`<span class="tag">${p.badge}</span>`:""}<button class="heart ${wish.includes(p.id)?'on':''}" onclick="hw(${p.id})">♥</button>
+ <div class="pic" onclick="qv(${p.id})" style="${bg(p)}">${p.image?"":p.icon}</div><div class="inf"><small>${p.plat} · ${p.cat}</small><h3 onclick="qv(${p.id})">${p.name}</h3><small>★ ${p.rating}</small>${vipLine(p)}${p.stock>0&&p.stock<=5?` <small style="color:var(--p)">· Only ${p.stock} left!</small>`:""}
+ <div class="pr"><b>${fmt(pr(p))}</b>${p.old?`<s>${fmt(p.old)}</s>`:""}<span class="pt">+${Math.floor(pr(p)*CONFIG.ptsPerTnd)} pts</span></div>${p.stock===0?'<button class="add" style="background:#444;color:#fff;box-shadow:none" onclick="notify(${p.id})">Sold out · Notify me</button>':`<button class="add" onclick="add(${p.id})">+ Add to cart</button>`}</div></div>`).join("")||'<p style="color:var(--mu)">No products found.</p>';
+ $("wc").textContent=wish.length}
+function bg(p){return p.image?`background:url('${p.image}') center/cover`:`background:linear-gradient(160deg,${p.c1},${p.c2})`}
+function hw(id){wish.includes(id)?wish=wish.filter(x=>x!=id):wish.push(id);try{localStorage.setItem("gw",JSON.stringify(wish))}catch(e){}draw()}
+function qv(id){const p=P(id);$("qv").innerHTML=`<div class="pic" style="${bg(p)};border-radius:10px;aspect-ratio:2/1">${p.image?"":p.icon}</div><h2 style="margin:14px 0 4px">${p.name}</h2><small style="color:var(--mu)">${p.plat} · ${p.cat} · ★ ${p.rating}</small><p style="color:var(--mu)">${p.desc||""}</p><p class="note">Platform: ${p.plat} · Warranty: ${p.war||"12 months"} · ${p.stock===0?"Out of stock":p.stock?"Only "+p.stock+" in stock":"In stock"}</p><div class="pr"><b style="font-size:24px">${fmt(pr(p))}</b>${p.old?`<s>${fmt(p.old)}</s>`:""}<span class="pt">+${Math.floor(pr(p)*CONFIG.ptsPerTnd)} pts</span></div><button class="btn" style="width:100%" onclick="add(${id});closeAll();openC()">Add to cart</button>`;$("ov").classList.add("s");$("qv").classList.add("s")}
+function save(){try{localStorage.setItem("gc",JSON.stringify(cart))}catch(e){}drawC()}
+function add(id){const p=P(id),i=cart.find(x=>x.id==id);if(p.stock===0)return;if(i){if(p.stock&&i.q>=p.stock)return toast("Max stock reached");i.q++}else cart.push({id,q:1});save();toast("+1 "+P(id).name.slice(0,22)+" 🎒")}
+let tm;function toast(m){const t=$("tst");t.textContent=m;t.classList.add("s");clearTimeout(tm);tm=setTimeout(()=>t.classList.remove("s"),1600)}
+function qty(k,d){cart[k].q+=d;if(cart[k].q<1)cart.splice(k,1);save()}
+function coupon(){const c=$("cp").value.trim().toUpperCase();disc=CONFIG.coupons[c]||0;if(!disc)alert("Invalid code");drawC()}
+function tot(){const st=cart.reduce((a,x)=>a+pr(P(x.id))*x.q,0),d=st*disc/100,L=LEVELS[lv()],ld=(st-d)*L.off/100,t=st-d-ld,ship=cart.length&&DM!="pick"&&t<CONFIG.freeShip&&!L.ship?(DM=="loc"?CONFIG.localFee:CONFIG.shipFee):0;return{st,d,ld,t,ship,g:t+ship}}
+function drawC(){const{st,d,ld,t,ship,g}=tot(),n=cart.reduce((a,x)=>a+x.q,0);
+ $("cc").textContent=n;$("fc").textContent=n;$("ft").textContent=fmt(g);$("st").textContent=fmt(st);$("tt").textContent=fmt(g);$("lvr").innerHTML=ld?`<span>${LEVELS[lv()].icon} ${LEVELS[lv()].n} perk (${LEVELS[lv()].off}% off)</span><span>-${fmt(ld)}</span>`:"";$("ern").textContent=cart.length?"You will earn +"+Math.floor(g*CONFIG.ptsPerTnd)+" points with this order":"";$("shr").innerHTML=cart.length?`<span>Delivery</span><span>${ship?fmt(ship):"FREE"}</span>`:"";
+ $("dsr").innerHTML=d?`<span>Discount (${disc}%)</span><span>-${fmt(d)}</span>`:"";
+ const left=CONFIG.freeShip-t;$("ship").textContent=left>0&&!LEVELS[lv()].ship?`Add ${fmt(left)} more to unlock FREE DELIVERY`:"🎉 FREE DELIVERY UNLOCKED!";$("pg").style.width=Math.min(100,t/CONFIG.freeShip*100)+"%";
+ $("its").innerHTML=cart.length?cart.map((x,k)=>{const p=P(x.id);return `<div class="it"><div class="th" style="${bg(p)}">${p.image?"":p.icon}</div><div style="flex:1"><b>${p.name}</b><div class="q"><button onclick="qty(${k},-1)">−</button>${x.q}<button onclick="qty(${k},1)">+</button></div></div><b>${fmt(pr(p)*x.q)}</b></div>`}).join(""):'<p style="color:var(--mu)">Inventory empty. Go loot something!</p>';
+ $("sm").innerHTML=cart.map(x=>`<div class="row"><span>${x.q}× ${P(x.id).name}</span><span>${fmt(pr(P(x.id))*x.q)}</span></div>`).join("")+`<div class="row" style="font-weight:700;border-top:1px solid var(--ln);padding-top:6px"><span>Total${ship?" (incl. delivery)":""}</span><span>${fmt(g)}</span></div>`}
+function openC(){$("ov").classList.add("s");$("dr").classList.add("s")}
+function closeAll(){["ov","dr","qv","co"].forEach(i=>$(i).classList.remove("s"))}
+function openCo(){if(!cart.length)return;$("dr").classList.remove("s");$("co").classList.add("s");$("cf").style.display="grid";$("dn").style.display="none"}
+function pay(e){e.preventDefault();if(DM=="loc"&&!LOC&&!$("fl").value.trim()){alert("Please share your location or write a landmark.");return}const f=$("cf").elements,pm=$("pm").value,{g}=tot(),no="GM"+Date.now().toString().slice(-6),earn=Math.floor(g*CONFIG.ptsPerTnd);
+ if(CONFIG.whatsapp){const l=cart.map(x=>`${x.q}x ${P(x.id).name} - ${fmt(pr(P(x.id))*x.q)}`).join("\n");
+  window.open("https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(`New order ${no}\n${l}\nTotal: ${fmt(g)}\nPayment: ${pm}\nTime: ${$("ts").value}\nMember: ${LEVELS[lv()].n} (${XP} pts)\nName: ${$("fn").value}\nPhone: ${$("fp").value}\n${DM=="pick"?"Delivery: STORE PICKUP":DM=="loc"?"Delivery: LOCAL (location)\nLocation: "+(LOC||"-")+"\nNotes: "+$("fl").value+"\nPhone 2: "+$("fw").value:"Delivery: Standard\nAddress: "+$("fa").value+", "+$("gv").value}`),"_blank")}
+ else if(pm=="card"&&CONFIG.paymentLink){window.open(CONFIG.paymentLink,"_blank");return}
+ $("pb").textContent="Processing...";setTimeout(()=>{try{localStorage.setItem("gno",no)}catch(e){}const b4=lv();XP+=earn;sv();const up=lv()>b4;$("pb").textContent="Place order";cart=[];disc=0;save();$("cf").reset();setDM("std");LOC="";$("gps").textContent="📍 Share my location";$("cf").style.display="none";$("dn").querySelector("p").textContent="Order "+no+" received! We will contact you to confirm delivery. +"+earn+" points earned!"+(up?" 🎉 LEVEL UP: you are now "+LEVELS[lv()].n+" "+LEVELS[lv()].icon+"!":"");$("dn").style.display="block"},800)}
+function tick(){const n=new Date(),e=new Date(n);e.setHours(23,59,59,999);let d=Math.floor((e-n)/1000);const z=v=>String(v).padStart(2,"0");$("h").textContent=z(Math.floor(d/3600));$("m").textContent=z(Math.floor(d%3600/60));$("s").textContent=z(d%60)}
+const POL={shipping:["Shipping","Delivery takes 2 to 5 business days across Tunisia after we confirm your order by phone.<br><br>Standard delivery costs "+CONFIG.shipFee+" "+CONFIG.currency+" and local delivery "+CONFIG.localFee+" "+CONFIG.currency+". Both are free over "+CONFIG.freeShip+" "+CONFIG.currency+" and for Elite and Legend members. Store pickup is always free.<br><br>Please check your parcel when it arrives and tell us about any damage straight away."],
+returns:["Returns & warranty","Unopened items in original packaging can be returned within 14 days of delivery. Opened games, activated digital codes and gift cards cannot be returned.<br><br>Hardware comes with a manufacturer warranty (12 months unless the product says otherwise). Defective items are repaired or replaced. Contact us with your order number."],
+terms:["Terms of use","By placing an order you agree to these terms. Prices are in "+CONFIG.currency+" and may change without notice. An order is confirmed only after we contact you.<br><br>Stock is limited. If an item is unavailable we offer a replacement or a full refund. We may cancel orders with wrong details. Loyalty points have no cash value and the program may change."],
+privacy:["Privacy policy","We collect your name, phone, address or location and email only to process, deliver and talk to you about your order. We never sell your data.<br><br>Your cart, language and loyalty points are stored in your own browser. Contact us any time to ask us to delete your details."]};
+function pol(k){$("qv").innerHTML=`<h2>${POL[k][0]}</h2><p style="color:var(--mu)">${POL[k][1]}</p>`;$("ov").classList.add("s");$("qv").classList.add("s")}
+function sendMsg(e){e.preventDefault();const f=e.target.elements,m=`Name: ${f[0].value}\nEmail: ${f[1].value}\n${f[2].value}`;
+ if(CONFIG.whatsapp)window.open("https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(m));
+ else if(CONFIG.email)location.href="mailto:"+CONFIG.email+"?subject=Message&body="+encodeURIComponent(m);
+ else{alert("Set your WhatsApp number or email in CONFIG to receive messages.");return}e.target.reset()}
+const REVIEWS=[["Sample customer","★★★★★","Replace these with real customer reviews. Fast delivery and the console was sealed."],["Sample customer","★★★★★","Great prices and quick answers on WhatsApp."],["Sample customer","★★★★☆","Good support, controller arrived in 2 days."]];
+$("rv").innerHTML=REVIEWS.map(r=>`<div class="box"><h3>${r[1]}</h3><p>${r[2]}</p><p style="margin-top:8px;color:var(--tx)">— ${r[0]}</p></div>`).join("");
+$("gv").innerHTML+="Tunis,Ariana,Ben Arous,Manouba,Nabeul,Zaghouan,Bizerte,Beja,Jendouba,Le Kef,Siliana,Sousse,Monastir,Mahdia,Sfax,Kairouan,Kasserine,Sidi Bouzid,Gabes,Medenine,Tataouine,Gafsa,Tozeur,Kebili".split(",").map(g=>`<option>${g}</option>`).join("");
+$("bf2").textContent=CONFIG.brand;
+$("ci").innerHTML=[CONFIG.phone&&"📞 "+CONFIG.phone,CONFIG.email&&"✉ "+CONFIG.email,"📍 "+CONFIG.address,"🕒 "+CONFIG.hours,...["instagram","tiktok","facebook","discord"].filter(k=>CONFIG[k]).map(k=>`<a href="${CONFIG[k]}" target="_blank" rel="noopener">${k}</a>`)].filter(Boolean).map(x=>x.startsWith("<a")?x:`<span>${x}</span>`).join("");
+if(CONFIG.whatsapp){const a=document.createElement("a");a.href="https://wa.me/"+CONFIG.whatsapp;a.target="_blank";a.className="wa";a.textContent="💬";a.title="Chat on WhatsApp";document.body.appendChild(a)}
+const TR={"Shop":["Boutique","المتجر"],"Deals":["Promos","العروض"],"Rewards":["Récompenses","المكافآت"],"Reviews":["Avis","التقييمات"],"Services":["Services","الخدمات"],"FAQ":["FAQ","الأسئلة الشائعة"],"Contact":["Contact","اتصل بنا"],
+"⚡ FREE DELIVERY OVER 300 TND ★ CODE GAME10 = 10% OFF ★ NEW DROPS EVERY WEEK ★ 12 MONTH WARRANTY ★":["⚡ LIVRAISON GRATUITE DÈS 300 TND ★ CODE GAME10 = -10% ★ NOUVEAUTÉS CHAQUE SEMAINE ★ 12 MOIS DE GARANTIE ★","⚡ توصيل مجاني فوق 300 دينار ★ كود GAME10 = خصم 10% ★ جديد كل أسبوع ★ ضمان 12 شهراً ★"],
+"▶ PRESS START":["▶ APPUYEZ SUR START","▶ اضغط ابدأ"],"Insert coin":["Insérer une pièce","ابدأ اللعب"],"Hot deals":["Offres chaudes","عروض ساخنة"],
+"Consoles, games, PC gear and accessories. 100% genuine, delivered fast. Your next level starts here.":["Consoles, jeux, matériel PC et accessoires. 100% original, livré rapidement. Votre prochain niveau commence ici.","أجهزة ألعاب، ألعاب، قطع كمبيوتر وإكسسوارات. أصلية 100% وتوصيل سريع. مستواك القادم يبدأ هنا."],
+"ITEMS":["ARTICLES","منتج"],"DISPATCH":["EXPÉDITION","شحن"],"WARRANTY":["GARANTIE","ضمان"],
+"Pick your class":["Choisis ta classe","اختر فئتك"],"The loot":["Le butin","الغنائم"],"Why us":["Pourquoi nous","لماذا نحن"],"Rewards club":["Club de récompenses","نادي المكافآت"],"Player reviews":["Avis des joueurs","آراء اللاعبين"],
+"⚡ FLASH DEALS":["⚡ VENTES FLASH","⚡ عروض سريعة"],"Limited stock. Boss fight ends tonight!":["Stock limité. Le boss final se termine ce soir !","كمية محدودة. تنتهي المعركة الليلة!"],"HRS":["H","س"],"MIN":["MIN","د"],"SEC":["SEC","ث"],
+"All":["Tout","الكل"],"Sort: Featured":["Tri : Populaires","ترتيب: المميزة"],"Price: low to high":["Prix croissant","السعر: من الأقل"],"Price: high to low":["Prix décroissant","السعر: من الأعلى"],"Top rated":["Mieux notés","الأعلى تقييماً"],
+"Consoles":["Consoles","أجهزة الألعاب"],"Games":["Jeux","ألعاب"],"PC Gaming":["PC Gaming","كمبيوتر الألعاب"],"Accessories":["Accessoires","إكسسوارات"],"Gift Cards":["Cartes cadeaux","بطاقات الهدايا"],"Bundles":["Packs","عروض الحزم"],"Store pickup (free)":["Retrait en magasin (gratuit)","الاستلام من المتجر (مجاني)"],"Preferred time: any time":["Horaire souhaité : peu importe","الوقت المفضل: أي وقت"],"Morning (9-12)":["Matin (9-12)","صباحاً (9-12)"],"Afternoon (12-17)":["Après-midi (12-17)","بعد الظهر (12-17)"],"Evening (17-20)":["Soir (17-20)","مساءً (17-20)"],"Sold out · Notify me":["Épuisé · Me prévenir","نفدت · أعلمني"],"Track my order":["Suivre ma commande","تتبع طلبي"],"Order number (e.g. GM482913)":["Numéro de commande (ex. GM482913)","رقم الطلب (مثال GM482913)"],"Ask on WhatsApp":["Demander sur WhatsApp","اسأل عبر واتساب"],"About ZONIX":["À propos de ZONIX","عن ZONIX"],"Standard delivery (address)":["Livraison standard (adresse)","توصيل عادي (عنوان)"],"Local delivery (share your location)":["Livraison locale (partagez votre position)","توصيل محلي (شارك موقعك)"],"📍 Share my location":["📍 Partager ma position","📍 شارك موقعي"],"✓ Location saved":["✓ Position enregistrée","✓ تم حفظ الموقع"],"Locating...":["Localisation...","جارٍ التحديد..."],"Location link or landmark (e.g. near the pharmacy)":["Lien de localisation ou repère (ex. près de la pharmacie)","رابط الموقع أو معلم قريب (مثلاً قرب الصيدلية)"],"Second phone / WhatsApp (optional)":["2e téléphone / WhatsApp (facultatif)","هاتف ثانٍ / واتساب (اختياري)"],"We will call you to confirm your order and delivery time.":["Nous vous appellerons pour confirmer votre commande et l'heure de livraison.","سنتصل بك لتأكيد طلبك وموعد التوصيل."],"All platforms":["Toutes plateformes","كل المنصات"],"See all levels and perks":["Voir tous les niveaux et avantages","عرض كل المستويات والمزايا"],
+"+ Add to cart":["+ Ajouter","+ أضف للسلة"],"Sold out":["Épuisé","نفدت الكمية"],"SALE":["SOLDE","تخفيض"],"HOT":["POPULAIRE","رائج"],"NEW":["NOUVEAU","جديد"],"BUNDLE":["PACK","حزمة"],
+"🎒 Inventory":["🎒 Panier","🎒 السلة"],"Unlock":["Valider","تفعيل"],"Inventory empty. Go loot something!":["Panier vide. Va chercher du butin !","السلة فارغة. اذهب واختر شيئاً!"],"Subtotal":["Sous-total","المجموع الفرعي"],"Total":["Total","الإجمالي"],"Checkout":["Commander","إتمام الطلب"],"Delivery":["Livraison","التوصيل"],"FREE":["GRATUIT","مجاني"],"🎉 FREE DELIVERY UNLOCKED!":["🎉 LIVRAISON GRATUITE !","🎉 توصيل مجاني!"],
+"Enter cheat code":["Entrez le code promo","أدخل كود الخصم"],"Full name":["Nom complet","الاسم الكامل"],"Email":["E-mail","البريد الإلكتروني"],"Phone":["Téléphone","الهاتف"],"Address, city, postal code":["Adresse, ville, code postal","العنوان، المدينة، الرمز البريدي"],"Governorate":["Gouvernorat","الولاية"],"Cash on delivery":["Paiement à la livraison","الدفع عند الاستلام"],"Pay by card":["Payer par carte","الدفع بالبطاقة"],"Place order":["Valider la commande","تأكيد الطلب"],"Continue shopping":["Continuer vos achats","متابعة التسوق"],
+"Name":["Nom","الاسم"],"Message":["Message","الرسالة"],"Send":["Envoyer","إرسال"],"Join":["Rejoindre","اشترك"],"All products":["Tous les produits","كل المنتجات"],"Help":["Aide","مساعدة"],"Shipping":["Livraison","الشحن"],"Returns & warranty":["Retours et garantie","الإرجاع والضمان"],"Terms":["Conditions","الشروط"],"Privacy":["Confidentialité","الخصوصية"],
+"🔍  Search games, consoles, controllers, PC gear...":["🔍  Rechercher jeux, consoles, manettes...","🔍  ابحث عن ألعاب، أجهزة، يدّات..."]};
+const RX=[[/^\+(\d+) pts$/,"+$1 pts","+$1 نقطة"],[/^(\d+) products$/,"$1 produits","$1 منتج"],[/^Add (.+) more to unlock FREE DELIVERY$/,"Ajoutez $1 pour la LIVRAISON GRATUITE","أضف $1 للحصول على توصيل مجاني"],[/^· Only (\d+) left!$/,"· Plus que $1 !","· باقي $1 فقط!"],[/^You will earn \+(\d+) points with this order$/,"Vous gagnerez +$1 points","ستحصل على +$1 نقطة"]];
+let L="en",D=true,raf;try{L=localStorage.getItem("gl")||"en"}catch(e){}
+function trn(t){const i=L=="fr"?0:1,e=TR[t];if(e)return e[i];for(const[r,f,a]of RX)if(r.test(t))return t.replace(r,i?a:f);return t}
+function reach(m){if(CONFIG.whatsapp){window.open("https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(m));return true}if(CONFIG.email){location.href="mailto:"+CONFIG.email+"?body="+encodeURIComponent(m);return true}alert("Set your WhatsApp number or email in CONFIG first.");return false}
+function sub(e){e.preventDefault();if(reach("Please add me to the "+CONFIG.brand+" drops list: "+e.target.elements[0].value))e.target.reset()}
+function notify(id){reach("Please notify me when "+P(id).name+" is back in stock.")}
+function track(){let n="";try{n=localStorage.getItem("gno")||""}catch(e){}$("qv").innerHTML=`<h2>Track my order</h2><p style="color:var(--mu)">Enter your order number and we will reply with the status.</p><input id="tn" value="${n}" placeholder="Order number (e.g. GM482913)"><button class="btn" style="width:100%;margin-top:12px" onclick="reach('Where is my order '+$('tn').value+'?')">Ask on WhatsApp</button>`;$("ov").classList.add("s");$("qv").classList.add("s")}
+if(CONFIG.gaId){const g=document.createElement("script");g.async=true;g.src="https://www.googletagmanager.com/gtag/js?id="+CONFIG.gaId;document.head.appendChild(g);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config",CONFIG.gaId)}
+function setDM(v){DM=v;$("std").style.display=v=="std"?"grid":"none";$("loc").style.display=v=="loc"?"grid":"none";$("fa").required=v=="std";$("gv").required=v=="std";drawC()}
+function getLoc(){if(!navigator.geolocation){alert("Location is not available. Please write a landmark instead.");return}$("gps").textContent="Locating...";navigator.geolocation.getCurrentPosition(p=>{LOC="https://maps.google.com/?q="+p.coords.latitude.toFixed(6)+","+p.coords.longitude.toFixed(6);$("gps").textContent="✓ Location saved"},()=>{$("gps").textContent="📍 Share my location";alert("Could not get your location. Please write a landmark instead.")})}
+function tl(){if(L=="en"&&!D)return;D=false;const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
+ while(n=w.nextNode()){if(n.parentNode.closest("script,style"))continue;if(n._o===undefined)n._o=n.nodeValue;const o=n._o.trim();if(!o)continue;const nv=L=="en"?n._o:n._o.replace(o,trn(o));if(n.nodeValue!==nv)n.nodeValue=nv}
+ document.querySelectorAll("[placeholder]").forEach(e=>{if(e._p===undefined)e._p=e.placeholder;e.placeholder=L=="en"?e._p:trn(e._p.trim())})}
+function setL(l){L=l;try{localStorage.setItem("gl",l)}catch(e){}document.documentElement.lang=l;document.documentElement.dir=l=="ar"?"rtl":"ltr";D=true;tl();document.querySelector(".lgs").value=l}
+new MutationObserver(()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(tl)}).observe(document.body,{childList:true,subtree:true});
+tick();setInterval(tick,1000);draw();drawC();drawR();setL(L);
+</script></body></html>
